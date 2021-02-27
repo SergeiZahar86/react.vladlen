@@ -1,6 +1,7 @@
 
 import React from 'react'
 import TodoItem from "./TodoItem";
+import PropTypes from 'prop-types'  // подключаем для типизации
 
 
 const styles = {
@@ -11,7 +12,7 @@ const styles = {
     }
 }
 
-export default function TodoList(props)
+function TodoList(props)
 {
     return (
         <ul style={styles.ul}>
@@ -28,3 +29,9 @@ export default function TodoList(props)
         </ul>
     )
 }
+// Типизация входных данных для функции TodoList
+TodoList.propTypes = {
+    todosss:PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
+export default TodoList
